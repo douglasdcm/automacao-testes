@@ -3,3 +3,6 @@ pytest
 webdriver-manager
 python-dotenv
 guara
+flake8
+black
+isort
