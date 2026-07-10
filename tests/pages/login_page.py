@@ -7,8 +7,10 @@ class LoginPage(BasePage):
     USERNAME = (By.ID, "user-name")
     PASSWORD = (By.ID, "password")
     LOGIN_BTN = (By.ID, "login-button")
+    URL = "https://www.saucedemo.com/"
 
     def login(self, user, password):
+        self.open(self.URL)
         self.type(*self.USERNAME, user)
         self.type(*self.PASSWORD, password)
         self.click(*self.LOGIN_BTN)

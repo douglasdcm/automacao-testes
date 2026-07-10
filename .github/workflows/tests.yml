@@ -33,7 +33,7 @@ jobs:
           pip install -r requirements.txt
           pip install pytest-html
 
-      - name: Run tests
+      - name: Run PyTest tests
         run: |
           mkdir -p reports/screenshots
           python -m pytest tests/specs \
@@ -41,6 +41,10 @@ jobs:
             --junitxml=reports/results.xml \
             --self-contained-html \
             -m smoke
+
+      - name: Run Behave tests
+        run: |
+          behave
 
       - name: Upload reports
         uses: actions/upload-artifact@v4
