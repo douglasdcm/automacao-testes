@@ -1,4 +1,5 @@
 import pytest
+
 from tests.data.data_loader import load_data
 
 

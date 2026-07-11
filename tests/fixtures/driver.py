@@ -1,9 +1,9 @@
-from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
+import tempfile
+
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-import tempfile
+from webdriver_manager.chrome import ChromeDriverManager
 
 
 @pytest.fixture
@@ -12,6 +12,7 @@ def driver():
 
     yield driver
     driver.quit()
+
 
 def create_driver():
     chrome_options = Options()
@@ -41,9 +42,9 @@ def create_driver():
 
     # Modo headless
     chrome_options.add_argument("--headless")
-    chrome_options.add_argument("--no-sandbox") 
-    chrome_options.add_argument("--disable-dev-shm-usage") 
-    chrome_options.add_argument("--window-size=1920,1080") 
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--window-size=1920,1080")
 
     driver = webdriver.Chrome(options=chrome_options)
     driver.maximize_window()

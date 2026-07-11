@@ -20,4 +20,5 @@ documentation for details.
    how_to_create_test.md
    how_to_create_page.md
    how_to_create_transaction.md
+   how_to_validate_code_quality.md
    troubleshooting.md
